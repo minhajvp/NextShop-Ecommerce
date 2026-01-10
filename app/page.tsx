@@ -1,18 +1,13 @@
 import ProductCard from "@/components/ProductCard";
+import { getFeaturedProducts } from "@/lib/getFeaturedProducts";
 
 
-async function getProducts(){
-    const res = await fetch("http://localhost:3000/api/products/",{
-        cache:"no-store"
-    })
-    const result = await res.json()
-    return result.data
-}
+
 
 export default async function Home() {
 
-  const products = await getProducts()
-  const featured = products.slice(0, 3);
+  
+  const featured = await getFeaturedProducts(6)
   return (
     <div className="space-y-10">
 
@@ -35,7 +30,7 @@ export default async function Home() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {featured.map((product:any) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard key={product._id} product={product} />
           ))}
         </div>
       </section>

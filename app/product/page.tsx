@@ -1,18 +1,28 @@
+import LoadMore from "@/components/LoadMore";
 import ProductCard from "@/components/ProductCard";
+import Link from "next/link";
+
+type Props = {
+    searchParams:{
+        page?:String
+    }
+}
 
 
 
 
-async function getProducts(){
-    const res = await fetch("http://localhost:3000/api/products/",{
+async function getProducts(page:Number){
+    const res = await fetch(`http://localhost:3000/api/products?page=${page}&limit=10`,{
         cache:"no-store"
     })
-    const result = await res.json()
-    return result.data
+    return res.json()
+    
     
 }
-export default async function ProductsPage() {
-    const products = await getProducts()
+export default async function ProductsPage({searchParams}:Props) {
+    const params = await searchParams; 
+    const page = Number(params.page) || 1
+    const result = await getProducts(page)
   return (
     <div className="space-y-6">
 
@@ -20,11 +30,7 @@ export default async function ProductsPage() {
         All Products
       </h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {products.map((product:any) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      <LoadMore initialProducts={result.data} totalPages={result.totalPages}/>
 
     </div>
   );
