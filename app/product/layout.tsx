@@ -1,9 +1,12 @@
+import { AuthProvider } from "../context/AuthContext";
+
 export default function ProductsLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
+    <AuthProvider>
     <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6">
 
       {/* LEFT SIDEBAR (filters later) */}
@@ -13,9 +16,14 @@ export default function ProductsLayout({
           (We will implement this later)
         </p>
       </aside>
+      
+
+      
 
       {/* MAIN CONTENT */}
       <div>{children}</div>
+      
     </div>
+    </AuthProvider>
   );
 }
