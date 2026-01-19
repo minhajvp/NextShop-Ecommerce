@@ -54,7 +54,8 @@ export async function POST(req: Request) {
                     id: user._id.toString(),
                     name: user.name,
                     email: user.email
-                }
+                },
+                status:200
 
             },
             { status: 200 }

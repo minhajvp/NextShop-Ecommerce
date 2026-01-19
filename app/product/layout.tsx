@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import { AuthProvider } from "../context/AuthContext";
 
 export default function ProductsLayout({
@@ -6,7 +7,10 @@ export default function ProductsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <AuthProvider>
+    <>
+    
+    
+      <Navbar/>
     <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6">
 
       {/* LEFT SIDEBAR (filters later) */}
@@ -24,6 +28,7 @@ export default function ProductsLayout({
       <div>{children}</div>
       
     </div>
-    </AuthProvider>
+    </>
+    
   );
 }

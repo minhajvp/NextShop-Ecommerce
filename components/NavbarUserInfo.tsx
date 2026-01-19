@@ -11,7 +11,7 @@ export default function NavbarUserInfo() {
   return (
     <nav>
       {user ? (
-        <span>Welcome, {user.name}</span>
+        <span>{user.name}</span>
       ) : (
         <Link href="/login">Login</Link>
       )}

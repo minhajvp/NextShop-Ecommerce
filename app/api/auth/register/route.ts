@@ -32,7 +32,7 @@ export async function POST(req: Request) {
             password: hashedPassword
         })
         return NextResponse.json(
-            { message: `"User created Successfully, ID is ${userId._id}"` },
+            { status: 201,message: `"User created Successfully, ID is ${userId._id}"` },
             { status: 201 }
         )
     } catch (error) {

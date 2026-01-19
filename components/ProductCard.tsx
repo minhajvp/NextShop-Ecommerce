@@ -23,7 +23,7 @@ export default function ProductCard({ product }: Props) {
 
       <p className="text-gray-600">₹ {product.price}</p>
 
-      <AddToCartButton product={product}></AddToCartButton>
+      <AddToCartButton productId={product._id.toString()}></AddToCartButton>
     </div>
     </Link>
   );

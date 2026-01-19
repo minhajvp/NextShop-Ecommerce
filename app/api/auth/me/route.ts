@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 import User from "@/models/User";
 
 
-export default async function GET() {
+export async function GET() {
     try {
         connectDB();
         const token = (await cookies()).get("token")?.value

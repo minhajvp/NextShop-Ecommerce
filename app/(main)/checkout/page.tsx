@@ -1,6 +1,9 @@
+"use client"
+
 import React, { useEffect } from 'react'
-import { useAuth } from '../context/AuthContext'
-import { useRouter } from 'next/router'
+
+import { useRouter } from 'next/navigation'
+import { useAuth } from '@/app/context/AuthContext'
 
 export default function page() {
     const {user,loading} = useAuth()
