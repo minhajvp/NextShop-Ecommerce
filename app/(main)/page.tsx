@@ -1,5 +1,6 @@
 import ProductCard from "@/components/ProductCard";
 import { getFeaturedProducts } from "@/lib/getFeaturedProducts";
+import { useCart } from "../context/CartContext";
 
 
 
@@ -8,6 +9,7 @@ export default async function Home() {
 
   
   const featured = await getFeaturedProducts(6)
+  
   return (
     <div className="space-y-10">
 

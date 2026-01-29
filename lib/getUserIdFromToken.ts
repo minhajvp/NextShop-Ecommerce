@@ -11,7 +11,7 @@ export async function getUserIdFromToken(){
     }
     try{
         const decoded:any = jwt.verify(token,process.env.JWT_SECRET!)
-        return decoded.userId as string;
+        return decoded.id as string;
     }catch(err){
         return null
     }

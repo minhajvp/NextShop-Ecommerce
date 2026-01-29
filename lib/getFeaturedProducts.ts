@@ -13,6 +13,7 @@ export async function getFeaturedProducts(limit = 6) {
             title: p.title,
             price: p.price,
             image: p.image,
+            variants:p.variants || []
         }
     ))
 }

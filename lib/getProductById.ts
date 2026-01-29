@@ -21,6 +21,13 @@ export async function getProductById(id: string) {
     price: product.price,
     stock: product.stock,
     image: product.image,
+    keyIngredients: product.keyIngredients,
+    keyBenefits: product.keyBenefits,
+    servingSuggestions: product.servingSuggestions,
+    highlights: product.highlights,
+    variants: product.variants || []
+
+
 
   };
 }

@@ -5,6 +5,7 @@ import Link from "next/link";
 
 export default function NavbarUserInfo() {
   const { user, loading } = useAuth();
+  
 
   if (loading) return null;
 
@@ -13,7 +14,7 @@ export default function NavbarUserInfo() {
       {user ? (
         <span>{user.name}</span>
       ) : (
-        <Link href="/login">Login</Link>
+        <span className="hidden"></span>
       )}
     </nav>
   );

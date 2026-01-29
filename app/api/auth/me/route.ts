@@ -18,7 +18,7 @@ export async function GET() {
         }
 
         const decoded: any = jwt.verify(token, process.env.JWT_SECRET!)
-        const user = await User.findById(decoded.userId).select("_id name email").lean()
+        const user = await User.findById(decoded.id).select("_id name email").lean()
 
         if (!user) {
             return NextResponse.json(

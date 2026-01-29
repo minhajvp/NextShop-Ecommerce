@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CartBadge from "./CartBadge";
 import NavbarUserInfo from "./NavbarUserInfo";
+import LogoutButton from "./LogoutButton";
 
 export default function Navbar() {
     
@@ -25,8 +26,13 @@ export default function Navbar() {
                     <Link href="/about" className="text-black">
                         About
                     </Link>
+                    <Link href="/orders" className="text-black">
+                        My Orders
+                    </Link>
+
                     <NavbarUserInfo/>
                     <CartBadge/>
+                    <LogoutButton/>
 
                 </div>
             </div>

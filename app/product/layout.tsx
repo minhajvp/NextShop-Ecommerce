@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import { AuthProvider } from "../context/AuthContext";
 
 export default function ProductsLayout({
   children,
@@ -9,8 +8,8 @@ export default function ProductsLayout({
   return (
     <>
     
-    
       <Navbar/>
+
     <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-6">
 
       {/* LEFT SIDEBAR (filters later) */}

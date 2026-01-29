@@ -33,7 +33,8 @@ export default function Login() {
         return
       }
       setLoading(false)
-      router.push('/')
+      // Full page reload to ensure AuthContext picks up the new token and triggers cart sync
+      window.location.href = '/'
 
 
     }catch(error){

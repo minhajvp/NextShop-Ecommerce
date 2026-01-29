@@ -16,21 +16,26 @@ const CartSchema = new mongoose.Schema(
             {
                 productId: {
                     type: mongoose.Schema.Types.ObjectId,
-                    ref: Product,
-                    required: true
+                    ref: "Product",
+                    required: true,
                 },
+
+                variantLabel: { type: String, required: true }, // ✅ "250g"
+
                 title: String,
                 price: Number,
                 image: String,
+                originalPrice: Number,
+
                 quantity: {
                     type: Number,
                     default: 1,
                     min: 1,
-                }
-            }
-        ]
+                },
+            },
+        ],
     },
-    {timestamps:true}
+    { timestamps: true }
 )
 
 const Cart = mongoose.models.Cart || mongoose.model("Cart", CartSchema);

@@ -34,8 +34,6 @@ export async function GET(req: Request) {
 }
 
 
-console.log(filter)
-
   const totalProducts = await Product.countDocuments(filter);
   console.log(totalProducts)
 
@@ -59,7 +57,8 @@ console.log(filter)
       category: p.category,
       price: p.price,
       stock: p.stock,
-      image: p.image,   
+      image: p.image,
+      variants:p.variants || [],   
       createdAt: p.createdAt,
     })),
   });

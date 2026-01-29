@@ -13,30 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <AuthProvider>
-            <CartProvider>
-                <div>
-        <Navbar/>
-          
-        <div>
-{children}
-        </div>
+    <div>
+      <Navbar/>
+      <div>
+        {children}
+      </div>
     </div>
-
-            </CartProvider>
-            </AuthProvider>
-    
-    
-       
-            
-          
-        
-        
-       
-
-        
-
-        
-     
   );
 }
